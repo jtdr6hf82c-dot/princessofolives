@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Princess of Olives | Rebirth and Transformation</title>
+<title>Princess of Olives | Renacimiento y Transformación</title>
 
-<!-- Elegant Typography -->
+<!-- Tipografías Elegantes -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -37,29 +37,34 @@ h1, h2, h3 {
 a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* Fixed Navigation Bar */
+/* Control de Idiomas */
+body.lang-es .en { display: none !important; }
+body.lang-en .es { display: none !important; }
+
+/* Barra de Navegación Fija */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(253, 252, 249, 0.95);
-    padding: 15px 0;
+    background: rgba(253, 252, 249, 0.96);
+    padding: 15px 20px;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav a {
-    margin: 0 12px;
     color: var(--text-dark);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-nav a:hover {
-    color: var(--olive);
-}
+nav a:hover { color: var(--olive); }
 
 nav a.nav-btn {
     padding: 8px 18px;
@@ -68,22 +73,39 @@ nav a.nav-btn {
     border-radius: 2px;
 }
 
-nav a.nav-btn:hover {
-    background: var(--olive-dark);
+nav a.nav-btn:hover { background: var(--olive-dark); }
+
+.lang-switch {
+    border: 1px solid var(--olive);
+    background: transparent;
+    color: var(--olive);
+    padding: 5px 12px;
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.lang-switch:hover {
+    background: var(--olive);
     color: var(--white);
 }
 
 /* Hero Section */
 .hero {
     height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('img/hero-principal.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(44, 53, 41, 0.45), rgba(44, 53, 41, 0.45)), url('hero-principal.jpg') no-repeat center center/cover;
+    background-color: #3E4E22; /* Respaldo color olivo si no hay foto de fondo */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--white);
     padding: 0 20px;
-    margin-top: 50px;
+    margin-top: 55px;
 }
 
 .hero-content h1 {
@@ -98,7 +120,7 @@ nav a.nav-btn:hover {
     letter-spacing: 1px;
 }
 
-/* General Buttons */
+/* Botones Generales */
 .btn {
     display: inline-block;
     margin-top: 25px;
@@ -111,11 +133,9 @@ nav a.nav-btn:hover {
     border-radius: 2px;
 }
 
-.btn:hover {
-    background-color: var(--olive-dark);
-}
+.btn:hover { background-color: var(--olive-dark); }
 
-/* General Sections */
+/* Secciones Generales */
 section {
     padding: 90px 20px;
     max-width: 1000px;
@@ -136,7 +156,7 @@ section p {
     text-align: justify;
 }
 
-/* About Me Section */
+/* Sección Sobre Mí */
 .about-container {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -159,7 +179,7 @@ section p {
     pointer-events: none;
 }
 
-.about-text span {
+.about-text span.tag {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -168,12 +188,9 @@ section p {
     margin-bottom: 8px;
 }
 
-.about-text h2 {
-    text-align: left;
-    margin-bottom: 20px;
-}
+.about-text h2 { text-align: left; margin-bottom: 20px; }
 
-/* Rebirthing Section */
+/* Sección Rebirthing */
 .rebirthing-container {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -181,9 +198,7 @@ section p {
     align-items: center;
 }
 
-.rebirthing-text h2 {
-    text-align: left;
-}
+.rebirthing-text h2 { text-align: left; }
 
 .rebirthing-img-box {
     border-radius: 4px;
@@ -191,7 +206,7 @@ section p {
     box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 
-/* Who is this for */
+/* Para quién es */
 .for-who-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -208,7 +223,7 @@ section p {
     font-size: 0.95rem;
 }
 
-/* Sessions and Pricing Cards */
+/* Tarjetas de Sesiones */
 .sessions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -225,11 +240,8 @@ section p {
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
 
-.card h3 {
-    font-size: 1.8rem;
-    color: var(--text-dark);
-    margin-bottom: 15px;
-}
+.card h3 { font-size: 1.8rem; color: var(--text-dark); margin-bottom: 15px; }
+.card p { text-align: center; }
 
 .price {
     font-size: 1.8rem;
@@ -239,17 +251,14 @@ section p {
     font-weight: 600;
 }
 
-/* Testimonials Section */
+/* Sección de Testimonios */
 .testimonials-section {
     background-color: var(--ivory);
     max-width: 100%;
     padding: 90px 20px;
 }
 
-.testimonials-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-}
+.testimonials-inner { max-width: 1000px; margin: 0 auto; }
 
 .testimonials-grid {
     display: grid;
@@ -264,7 +273,6 @@ section p {
     border-radius: 6px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.03);
     border-top: 3px solid var(--olive);
-    position: relative;
 }
 
 .testimonial-card p {
@@ -274,20 +282,10 @@ section p {
     margin-bottom: 25px;
 }
 
-.testimonial-author strong {
-    display: block;
-    color: var(--text-dark);
-    font-size: 0.95rem;
-}
+.testimonial-author strong { display: block; color: var(--text-dark); font-size: 0.95rem; }
+.testimonial-author span { font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
 
-.testimonial-author span {
-    font-size: 0.8rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* FAQ and Policies */
+/* FAQ y Políticas */
 .faq-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -295,17 +293,8 @@ section p {
     margin-top: 30px;
 }
 
-.faq-card {
-    background: var(--ivory);
-    padding: 25px;
-    border-radius: 6px;
-}
-
-.faq-card strong {
-    color: var(--olive-dark);
-    display: block;
-    margin-bottom: 10px;
-}
+.faq-card { background: var(--ivory); padding: 25px; border-radius: 6px; }
+.faq-card strong { color: var(--olive-dark); display: block; margin-bottom: 10px; }
 
 .whatsapp {
     text-align: center;
@@ -313,8 +302,6 @@ section p {
     max-width: 100%;
     padding: 80px 20px;
 }
-
-.whatsapp h2 { color: var(--olive); }
 
 footer {
     text-align: center;
@@ -326,176 +313,246 @@ footer {
 footer h3 { color: var(--white); margin-bottom: 10px; font-size: 1.5rem; }
 footer span { color: var(--gold); }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
     .about-container, .rebirthing-container { grid-template-columns: 1fr; }
     .hero-content h1 { font-size: 2.8rem; }
-    nav a { margin: 0 6px; font-size: 10px; }
+    nav { gap: 8px; padding: 10px; }
+    nav a { font-size: 10px; }
 }
 </style>
 </head>
 
-<body>
+<body class="lang-es">
 
-<!-- Fixed Navigation Bar -->
+<!-- Barra de Navegación -->
 <nav>
-    <a href="#inicio">Home</a>
-    <a href="#sobre-mi">About Me</a>
-    <a href="#renacimiento">Rebirth</a>
-    <a href="#testimonios">Testimonials</a>
-    <a href="#sesiones">Sessions</a>
-    <a href="#contacto" class="nav-btn">Book</a>
+    <a href="#inicio"><span class="es">Inicio</span><span class="en">Home</span></a>
+    <a href="#sobre-mi"><span class="es">Sobre Mí</span><span class="en">About Me</span></a>
+    <a href="#renacimiento"><span class="es">Renacimiento</span><span class="en">Rebirth</span></a>
+    <a href="#testimonios"><span class="es">Testimonios</span><span class="en">Testimonials</span></a>
+    <a href="#sesiones"><span class="es">Sesiones</span><span class="en">Sessions</span></a>
+    <a href="#contacto" class="nav-btn"><span class="es">Reservar</span><span class="en">Book</span></a>
+    <button class="lang-switch" onclick="toggleLanguage()">
+        <span class="es">🌐 English</span>
+        <span class="en">🌐 Español</span>
+    </button>
 </nav>
 
 <!-- Hero Section -->
 <header id="inicio" class="hero">
     <div class="hero-content">
         <h1>Princess of Olives</h1>
-        <p>To remember is to come back home.</p>
-        <p>A space dedicated to human development, personal transformation, and Rebirth.</p>
-        <a class="btn" href="https://wa.me/5213312674594" target="_blank">Book a Session</a>
+        <p class="es">Recordar es volver a casa.</p>
+        <p class="en">To remember is to come back home.</p>
+        
+        <p class="es">Un espacio dedicado al desarrollo humano, la transformación personal y el Renacimiento.</p>
+        <p class="en">A space dedicated to human development, personal transformation, and Rebirth.</p>
+        
+        <a class="btn" href="https://wa.me/5213312674594" target="_blank">
+            <span class="es">Reservar una Sesión</span>
+            <span class="en">Book a Session</span>
+        </a>
     </div>
 </header>
 
-<!-- About Princess of Olives and About Me -->
+<!-- Sobre Mí -->
 <section id="sobre-mi">
     <div class="about-container">
         <div class="about-img-box">
-            <!-- Ensure your image is named profile3.jpg inside the img folder -->
-            <img src="img/profile3.jpg" alt="Fania - Princess of Olives">
+            <!-- Si tus fotos están dentro de una carpeta llamada img, cambia a src="img/Profile3.JPG" -->
+            <img src="Profile3.JPG" alt="Fania - Princess of Olives">
         </div>
         <div class="about-text">
-            <span>The Soul Behind</span>
-            <h2>About Princess of Olives</h2>
-            <p><strong>Trained in high-quality Rebirthing.</strong> Princess of Olives is a space dedicated to human development, personal transformation, and the expansion of consciousness.</p>
-            <p>Through Rebirthing sessions, I accompany individuals who wish to understand themselves more deeply, release what no longer serves them, and open up to new possibilities for growth.</p>
-            <p>I believe every human being possesses the capacity to renew themselves when they find the right space to listen, understand, and remember their own inner strength.</p>
+            <span class="tag es">El Alma Detrás</span>
+            <span class="tag en">The Soul Behind</span>
+            
+            <h2 class="es">Sobre Princess of Olives</h2>
+            <h2 class="en">About Princess of Olives</h2>
+            
+            <p class="es"><strong>Formada en Renacimiento de alta calidad.</strong> Princess of Olives es un espacio dedicado al desarrollo humano, la transformación personal y la expansión de la conciencia.</p>
+            <p class="en"><strong>Trained in high-quality Rebirthing.</strong> Princess of Olives is a space dedicated to human development, personal transformation, and the expansion of consciousness.</p>
+            
+            <p class="es">A través de sesiones de Renacimiento, acompaño a personas que desean comprenderse más profundamente, liberar aquello que ya no les sirve y abrirse a nuevas posibilidades de crecimiento.</p>
+            <p class="en">Through Rebirthing sessions, I accompany individuals who wish to understand themselves more deeply, release what no longer serves them, and open up to new possibilities for growth.</p>
+            
+            <p class="es">Creo que cada ser humano posee la capacidad de renovarse cuando encuentra el espacio adecuado para escucharse, comprenderse y recordar su propia fortaleza.</p>
+            <p class="en">I believe every human being possesses the capacity to renew themselves when they find the right space to listen, understand, and remember their own inner strength.</p>
         </div>
     </div>
 </section>
 
-<!-- Rebirth Section -->
+<!-- Renacimiento -->
 <section id="renacimiento">
     <div class="rebirthing-container">
         <div class="rebirthing-text">
-            <h2>Rebirth</h2>
-            <p>Rebirth is an invitation to return to your essence. It doesn't aim to turn you into someone new; it invites you to remember.</p>
-            <p>Remember your clarity. Remember your strength. Remember your capacity for transformation through conscious breathing.</p>
-            <p>Each session is unique. Everyone arrives with a different story, needs, and process within a safe and held space.</p>
+            <h2 class="es">Renacimiento</h2>
+            <h2 class="en">Rebirth</h2>
+            
+            <p class="es">El Renacimiento es una invitación a regresar a la esencia. No pretende convertirte en alguien nuevo; te invita a recordar.</p>
+            <p class="en">Rebirth is an invitation to return to your essence. It doesn't aim to turn you into someone new; it invites you to remember.</p>
+            
+            <p class="es">Recordar tu claridad. Recordar tu fuerza. Recordar tu capacidad de transformación a través de la respiración consciente.</p>
+            <p class="en">Remember your clarity. Remember your strength. Remember your capacity for transformation through conscious breathing.</p>
+            
+            <p class="es">Cada sesión es única. Cada persona llega con una historia, unas necesidades y un proceso diferente en un espacio seguro y contenido.</p>
+            <p class="en">Each session is unique. Everyone arrives with a different story, needs, and process within a safe and held space.</p>
         </div>
         <div class="rebirthing-img-box">
-            <!-- Ensure your image is named rebirthing-session.jpg inside the img folder -->
-            <img src="img/rebirthing-session.jpg" alt="Guided Rebirth Session">
+            <!-- Si tus fotos están dentro de una carpeta llamada img, cambia a src="img/Rebirthing Session.jpg" -->
+            <img src="Rebirthing Session.jpg" alt="Sesión de Renacimiento guiada">
         </div>
     </div>
 </section>
 
-<!-- Who is this for? -->
+<!-- ¿Para quién es? -->
 <section>
-    <h2>Who is this path for?</h2>
+    <h2 class="es">¿Para quién es este camino?</h2>
+    <h2 class="en">Who is this path for?</h2>
     <div class="for-who-grid">
-        <div class="for-who-item">✨ Individuals going through major life changes.</div>
-        <div class="for-who-item">✨ Those seeking greater mental clarity.</div>
-        <div class="for-who-item">✨ People wanting to transform repetitive patterns.</div>
-        <div class="for-who-item">✨ Individuals interested in personal growth.</div>
-        <div class="for-who-item">✨ Anyone feeling the call to know themselves more deeply.</div>
+        <div class="for-who-item"><span class="es">✨ Personas que atraviesan cambios importantes.</span><span class="en">✨ Individuals going through major life changes.</span></div>
+        <div class="for-who-item"><span class="es">✨ Personas que buscan mayor claridad.</span><span class="en">✨ Those seeking greater mental clarity.</span></div>
+        <div class="for-who-item"><span class="es">✨ Personas que desean transformar patrones repetitivos.</span><span class="en">✨ People wanting to transform repetitive patterns.</span></div>
+        <div class="for-who-item"><span class="es">✨ Personas interesadas en el crecimiento personal.</span><span class="en">✨ Individuals interested in personal growth.</span></div>
+        <div class="for-who-item"><span class="es">✨ Personas que sienten el llamado a conocerse más profundamente.</span><span class="en">✨ Anyone feeling the call to know themselves more deeply.</span></div>
     </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIOS -->
 <div id="testimonios" class="testimonials-section">
     <div class="testimonials-inner">
-        <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); display: block; text-align: center; margin-bottom: 8px;">Real Experiences</span>
-        <h2>Voices of Transformation</h2>
+        <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); display: block; text-align: center; margin-bottom: 8px;">
+            <span class="es">Experiencias Reales</span><span class="en">Real Experiences</span>
+        </span>
+        <h2 class="es">Voces de Transformación</h2>
+        <h2 class="en">Voices of Transformation</h2>
         
         <div class="testimonials-grid">
-            <!-- Testimonial 1 -->
+            <!-- Testimonio 1 -->
             <div class="testimonial-card">
-                <p>"For me, the 1st Rebirth cycle was a difficult but highly enriching process. Finding the time and calm to sit down and just breathe was a huge challenge for my mind. But over the weeks I felt lighter, people started telling me I looked different, with more luz (light)... Recognizing it was healing and gratifying."</p>
+                <p class="es">"Para mí el 1er ciclo de renacimiento fue un proceso difícil pero muy enriquecedor. Encontrar el tiempo y la calma para sentarme y solo respirar fue un gran reto para mi mente. Pero con las semanas me fui sintiendo más ligera, la gente me comenzó a decir que me veía diferente, que tenía más luz... Reconocerlo fue sanador y gratificante."</p>
+                <p class="en">"For me, the 1st Rebirth cycle was a difficult but highly enriching process. Finding the time and calm to sit down and just breathe was a huge challenge for my mind. But over the weeks I felt lighter, people started telling me I looked different, with more light... Recognizing it was healing and gratifying."</p>
                 <div class="testimonial-author">
-                    <strong>1st Cycle Process</strong>
-                    <span>Rebirth</span>
+                    <strong><span class="es">Proceso de 1er Ciclo</span><span class="en">1st Cycle Process</span></strong>
+                    <span><span class="es">Renacimiento</span><span class="en">Rebirth</span></span>
                 </div>
             </div>
 
-            <!-- Testimonial 2 (Iliana García) -->
+            <!-- Testimonio 2 (Iliana García) -->
             <div class="testimonial-card">
-                <p>"The Rebirthing cycle was completely new to me... I am grateful to Rebirthing because it surely helped me navigate in a better way a year that was quite a challenge, and to Fania who guided and accompanied me through the process, even when she saw me resisting or calming down during moments of fear or anxiety."</p>
+                <p class="es">"El ciclo de Rebirthing fue algo totalmente nuevo para mí... Estoy agradecida con Rebirthing porque seguramente me ayudó a transitar de una mejor manera un año que fue un reto, y con Fania quien me guió y acompañó en el proceso, aún cuando vio que a veces me resistía o me calmaba en los momentos de miedo o angustia."</p>
+                <p class="en">"The Rebirthing cycle was completely new to me... I am grateful to Rebirthing because it surely helped me navigate in a better way a year that was quite a challenge, and to Fania who guided and accompanied me through the process, even when she saw me resisting or calming down during moments of fear or anxiety."</p>
                 <div class="testimonial-author">
                     <strong>Iliana García</strong>
-                    <span>March 14, 2025</span>
+                    <span><span class="es">14 de marzo, 2025</span><span class="en">March 14, 2025</span></span>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Sessions -->
+<!-- Sesiones -->
 <section id="sesiones">
-    <h2>Sessions</h2>
+    <h2 class="es">Sesiones</h2>
+    <h2 class="en">Sessions</h2>
     <div class="sessions-grid">
         <div class="card">
-            <h3>Individual Session</h3>
-            <p>Duration: 90 minutes</p>
+            <h3 class="es">Sesión Individual</h3>
+            <h3 class="en">Individual Session</h3>
+            <p class="es">Duración: 90 minutos</p>
+            <p class="en">Duration: 90 minutes</p>
             <div class="price">USD $45</div>
         </div>
         <div class="card">
-            <h3>Rebirth Program</h3>
-            <p>10 private sessions.</p>
-            <p style="margin-top: 15px;">Full payment: <br><strong>USD $350</strong></p>
-            <p>Two payments: <br><strong>USD $200 + USD $200</strong></p>
+            <h3 class="es">Programa de Renacimiento</h3>
+            <h3 class="en">Rebirth Program</h3>
+            <p class="es">10 sesiones privadas.</p>
+            <p class="en">10 private sessions.</p>
+            <p style="margin-top: 15px;"><span class="es">Pago completo:</span><span class="en">Full payment:</span> <br><strong>USD $350</strong></p>
+            <p><span class="es">Dos pagos:</span><span class="en">Two payments:</span> <br><strong>USD $200 + USD $200</strong></p>
         </div>
     </div>
 </section>
 
-<!-- Frequently Asked Questions -->
+<!-- Preguntas Frecuentes -->
 <section>
-    <h2>Frequently Asked Questions</h2>
+    <h2 class="es">Preguntas Frecuentes</h2>
+    <h2 class="en">Frequently Asked Questions</h2>
     <div class="faq-grid">
         <div class="faq-card">
-            <strong>Do I need prior experience?</strong>
-            <p>No. Just openness and willingness for the process.</p>
+            <strong><span class="es">¿Necesito experiencia previa?</span><span class="en">Do I need prior experience?</span></strong>
+            <p class="es">No. Solo apertura y disposición para el proceso.</p>
+            <p class="en">No. Just openness and willingness for the process.</p>
         </div>
         <div class="faq-card">
-            <strong>Are the sessions confidential?</strong>
-            <p>Yes. Everything shared remains in a space of respect and confidentiality.</p>
+            <strong><span class="es">¿Las sesiones son confidenciales?</span><span class="en">Are the sessions confidential?</span></strong>
+            <p class="es">Sí. Todo lo compartido permanece en un espacio de respeto y confidencialidad.</p>
+            <p class="en">Yes. Everything shared remains in a space of respect and confidentiality.</p>
         </div>
         <div class="faq-card">
-            <strong>Can I reschedule?</strong>
-            <p>Yes. With at least 24 hours notice.</p>
+            <strong><span class="es">¿Puedo reprogramar?</span><span class="en">Can I reschedule?</span></strong>
+            <p class="es">Sí. Con al menos 24 horas de anticipación.</p>
+            <p class="en">Yes. With at least 24 hours notice.</p>
         </div>
         <div class="faq-card">
-            <strong>Do sessions replace medical or psychological care?</strong>
-            <p>No. The sessions are for personal growth purposes and do not replace professional healthcare services.</p>
+            <strong><span class="es">¿Las sesiones sustituyen atención médica o psicológica?</span><span class="en">Do sessions replace medical or psychological care?</span></strong>
+            <p class="es">No. Las sesiones tienen un propósito de crecimiento personal y no sustituyen servicios profesionales de salud.</p>
+            <p class="en">No. The sessions are for personal growth purposes and do not replace professional healthcare services.</p>
         </div>
     </div>
 </section>
 
-<!-- Policies -->
+<!-- Políticas -->
 <section>
-    <h2>Policies</h2>
-    <p>Sessions are booked once payment is received.</p>
-    <p>Rescheduling with more than 24 hours in advance is free of charge.</p>
-    <p>Cancellations with less than 24 hours notice are non-refundable.</p>
-    <p>Programs once started are non-refundable.</p>
+    <h2 class="es">Políticas</h2>
+    <h2 class="en">Policies</h2>
+    <p class="es">Las sesiones se reservan una vez recibido el pago.</p>
+    <p class="en">Sessions are booked once payment is received.</p>
+    <p class="es">Las reprogramaciones con más de 24 horas de anticipación no tienen costo.</p>
+    <p class="en">Rescheduling with more than 24 hours in advance is free of charge.</p>
+    <p class="es">Las cancelaciones con menos de 24 horas no son reembolsables.</p>
+    <p class="en">Cancellations with less than 24 hours notice are non-refundable.</p>
+    <p class="es">Los programas iniciados no son reembolsables.</p>
+    <p class="en">Programs once started are non-refundable.</p>
 </section>
 
-<!-- WhatsApp / Contact Section -->
+<!-- Sección WhatsApp -->
 <section id="contacto" class="whatsapp">
-    <h2>Book Your Session</h2>
-    <p style="text-align: center;">If this path resonates with you, it will be an honor to accompany you.</p>
+    <h2 class="es">Reserva Tu Sesión</h2>
+    <h2 class="en">Book Your Session</h2>
+    <p class="es" style="text-align: center;">Si este camino resuena contigo, será un honor acompañarte.</p>
+    <p class="en" style="text-align: center;">If this path resonates with you, it will be an honor to accompany you.</p>
     <br>
-    <a class="btn" href="https://wa.me/5213312674594" target="_blank">Contact via WhatsApp</a>
+    <a class="btn" href="https://wa.me/5213312674594" target="_blank">
+        <span class="es">Escribir por WhatsApp</span>
+        <span class="en">Contact via WhatsApp</span>
+    </a>
 </section>
 
 <!-- Footer -->
 <footer>
     <h3>Princess of Olives</h3>
-    <p>Consciousness • Transformation • Service</p>
+    <p class="es">Conciencia • Transformación • Servicio</p>
+    <p class="en">Consciousness • Transformation • Service</p>
     <br>
-    <p>Spanish | English</p>
-    <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2026 Princess of Olives. All rights reserved.</p>
+    <p style="cursor: pointer; color: var(--gold);" onclick="toggleLanguage()">Español | English</p>
+    <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2026 Princess of Olives. <span class="es">Todos los derechos reservados.</span><span class="en">All rights reserved.</span></p>
 </footer>
+
+<!-- Script para cambiar de idioma -->
+<script>
+function toggleLanguage() {
+    const body = document.body;
+    if (body.classList.contains('lang-es')) {
+        body.classList.remove('lang-es');
+        body.classList.add('lang-en');
+        document.documentElement.lang = 'en';
+    } else {
+        body.classList.remove('lang-en');
+        body.classList.add('lang-es');
+        document.documentElement.lang = 'es';
+    }
+}
+</script>
 
 </body>
 </html>
