@@ -94,10 +94,11 @@ nav a.nav-btn:hover { background: var(--olive-dark); }
     color: var(--white);
 }
 
-/* Hero Section */
+/* Hero Section con el fondo del olivo y los brillitos estelares */
 .hero {
+    position: relative;
     height: 90vh;
-    background: linear-gradient(rgba(44, 53, 41, 0.45), rgba(44, 53, 41, 0.45)), url('hero-principal.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(44, 53, 41, 0.5), rgba(44, 53, 41, 0.5)), url('hero-principal.jpg') no-repeat center center/cover;
     background-color: #3E4E22;
     display: flex;
     align-items: center;
@@ -106,11 +107,38 @@ nav a.nav-btn:hover { background: var(--olive-dark); }
     color: var(--white);
     padding: 0 20px;
     margin-top: 55px;
+    overflow: hidden;
+}
+
+/* Efecto de brillitos sutiles animados */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(rgba(184, 134, 11, 0.8) 1.5px, transparent 1.5px);
+    background-size: 60px 60px, 90px 90px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.35;
+    animation: sparkle 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes sparkle {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-60px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
     font-size: 3.8rem;
     margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .hero-content p {
@@ -118,6 +146,7 @@ nav a.nav-btn:hover { background: var(--olive-dark); }
     font-weight: 300;
     margin-bottom: 15px;
     letter-spacing: 1px;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.3);
 }
 
 /* Botones Generales */
@@ -338,7 +367,7 @@ footer span { color: var(--gold); }
     </button>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero Section con la imagen del olivo y brillitos estelares -->
 <header id="inicio" class="hero">
     <div class="hero-content">
         <h1>Princess of Olives</h1>
@@ -369,4 +398,186 @@ footer span { color: var(--gold); }
             <h2 class="en">About Princess of Olives</h2>
             
             <p class="es"><strong>Formada en Renacimiento de alta calidad.</strong> Princess of Olives es un espacio dedicado al desarrollo humano, la transformación personal y la expansión de la conciencia.</p>
-            <p class="en"><strong>
+            <p class="en"><strong>Trained in high-quality Rebirthing.</strong> Princess of Olives is a space dedicated to human development, personal transformation, and the expansion of consciousness.</p>
+            
+            <p class="es">A través de sesiones de Renacimiento, acompaño a personas que desean comprenderse más profundamente, liberar aquello que ya no les sirve y abrirse a nuevas posibilidades de crecimiento.</p>
+            <p class="en">Through Rebirthing sessions, I accompany individuals who wish to understand themselves more deeply, release what no longer serves them, and open up to new possibilities for growth.</p>
+            
+            <p class="es">Creo que cada ser humano posee la capacidad de renovarse cuando encuentra el espacio adecuado para escucharse, comprenderse y recordar su propia fortaleza.</p>
+            <p class="en">I believe every human being possesses the capacity to renew themselves when they find the right space to listen, understand, and remember their own inner strength.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Renacimiento -->
+<section id="renacimiento">
+    <div class="rebirthing-container">
+        <div class="rebirthing-text">
+            <h2 class="es">Renacimiento</h2>
+            <h2 class="en">Rebirth</h2>
+            
+            <p class="es">El Renacimiento es una invitación a regresar a la esencia. No pretende convertirte en alguien nuevo; te invita a recordar.</p>
+            <p class="en">Rebirth is an invitation to return to your essence. It doesn't aim to turn you into someone new; it invites you to remember.</p>
+            
+            <p class="es">Recordar tu claridad. Recordar tu fuerza. Recordar tu capacidad de transformación a través de la respiración consciente.</p>
+            <p class="en">Remember your clarity. Remember your strength. Remember your capacity for transformation through conscious breathing.</p>
+            
+            <p class="es">Cada sesión es única. Cada persona llega con una historia, unas necesidades y un proceso diferente en un espacio seguro y contenido.</p>
+            <p class="en">Each session is unique. Everyone arrives with a different story, needs, and process within a safe and held space.</p>
+        </div>
+        <div class="rebirthing-img-box">
+            <img src="Rebirthing Session.jpg" alt="Sesión de Renacimiento guiada">
+        </div>
+    </div>
+</section>
+
+<!-- ¿Para quién es? -->
+<section>
+    <h2 class="es">¿Para quién es este camino?</h2>
+    <h2 class="en">Who is this path for?</h2>
+    <div class="for-who-grid">
+        <div class="for-who-item"><span class="es">✨ Personas que atraviesan cambios importantes.</span><span class="en">✨ Individuals going through major life changes.</span></div>
+        <div class="for-who-item"><span class="es">✨ Personas que buscan mayor claridad.</span><span class="en">✨ Those seeking greater mental clarity.</span></div>
+        <div class="for-who-item"><span class="es">✨ Personas que desean transformar patrones repetitivos.</span><span class="en">✨ People wanting to transform repetitive patterns.</span></div>
+        <div class="for-who-item"><span class="es">✨ Personas interesadas en el crecimiento personal.</span><span class="en">✨ Individuals interested in personal growth.</span></div>
+        <div class="for-who-item"><span class="es">✨ Personas que sienten el llamado a conocerse más profundamente.</span><span class="en">✨ Anyone feeling the call to know themselves more deeply.</span></div>
+    </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<div id="testimonios" class="testimonials-section">
+    <div class="testimonials-inner">
+        <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); display: block; text-align: center; margin-bottom: 8px;">
+            <span class="es">Experiencias Reales</span><span class="en">Real Experiences</span>
+        </span>
+        <h2 class="es">Voces de Transformación</h2>
+        <h2 class="en">Voices of Transformation</h2>
+        
+        <div class="testimonials-grid">
+            <!-- Testimonio 1 -->
+            <div class="testimonial-card">
+                <p class="es">"Para mí el 1er ciclo de renacimiento fue un proceso difícil pero muy enriquecedor. Encontrar el tiempo y la calma para sentarme y solo respirar fue un gran reto para mi mente. Pero con las semanas me fui sintiendo más ligera, la gente me comenzó a decir que me veía diferente, que tenía más luz... Reconocerlo fue sanador y gratificante."</p>
+                <p class="en">"For me, the 1st Rebirth cycle was a difficult but highly enriching process. Finding the time and calm to sit down and just breathe was a huge challenge for my mind. But over the weeks I felt lighter, people started telling me I looked different, with more light... Recognizing it was healing and gratifying."</p>
+                <div class="testimonial-author">
+                    <strong><span class="es">Proceso de 1er Ciclo</span><span class="en">1st Cycle Process</span></strong>
+                    <span><span class="es">Renacimiento</span><span class="en">Rebirth</span></span>
+                </div>
+            </div>
+
+            <!-- Testimonio 2 (Iliana García) -->
+            <div class="testimonial-card">
+                <p class="es">"El ciclo de Rebirthing fue algo totalmente nuevo para mí... Estoy agradecida con Rebirthing porque seguramente me ayudó a transitar de una mejor manera un año que fue un reto, y con Fania quien me guió y acompañó en el proceso, aún cuando vio que a veces me resistía o me calmaba en los momentos de miedo o angustia."</p>
+                <p class="en">"The Rebirthing cycle was completely new to me... I am grateful to Rebirthing because it surely helped me navigate in a better way a year that was quite a challenge, and to Fania who guided and accompanied me through the process, even when she saw me resisting or calming down during moments of fear or anxiety."</p>
+                <div class="testimonial-author">
+                    <strong>Iliana García</strong>
+                    <span><span class="es">14 de marzo, 2025</span><span class="en">March 14, 2025</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sesiones -->
+<section id="sesiones">
+    <h2 class="es">Sesiones y Programas</h2>
+    <h2 class="en">Sessions & Programs</h2>
+    <div class="sessions-grid">
+        <div class="card">
+            <h3 class="es">Sesión Individual</h3>
+            <h3 class="en">Individual Session</h3>
+            <p class="es">Ideal para vivir una experiencia de respiración consciente, explorar el proceso o avanzar a tu propio ritmo sesión por sesión.</p>
+            <p class="en">Ideal to experience conscious breathing, explore the process, or move forward at your own pace session by session.</p>
+            <p class="es" style="margin-top: 10px;"><strong>Duración:</strong> 90 minutos</p>
+            <p class="en" style="margin-top: 10px;"><strong>Duration:</strong> 90 minutes</p>
+            <div class="price">USD $45</div>
+        </div>
+        <div class="card">
+            <h3 class="es">1er Ciclo de Renacimiento</h3>
+            <h3 class="en">1st Rebirth Cycle</h3>
+            <p class="es">Un proceso profundo y transformador de alta calidad estructurado en <strong>10 sesiones</strong> para consolidar tu sanación.</p>
+            <p class="en">A deep, high-quality transformative process structured in <strong>10 sessions</strong> to anchor your healing.</p>
+            <p style="margin-top: 15px;"><span class="es">Pago completo del paquete:</span><span class="en">Full package payment:</span> <br><strong>USD $350</strong></p>
+            <p><span class="es">Opción en dos pagos:</span><span class="en">Two payment option:</span> <br><strong>USD $200 + USD $200</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- Preguntas Frecuentes -->
+<section>
+    <h2 class="es">Preguntas Frecuentes</h2>
+    <h2 class="en">Frequently Asked Questions</h2>
+    <div class="faq-grid">
+        <div class="faq-card">
+            <strong><span class="es">¿Necesito experiencia previa?</span><span class="en">Do I need prior experience?</span></strong>
+            <p class="es">No. Solo apertura y disposición para el proceso.</p>
+            <p class="en">No. Just openness and willingness for the process.</p>
+        </div>
+        <div class="faq-card">
+            <strong><span class="es">¿Las sesiones son confidenciales?</span><span class="en">Are the sessions confidential?</span></strong>
+            <p class="es">Sí. Todo lo compartido permanece en un espacio de respeto y confidencialidad.</p>
+            <p class="en">Yes. Everything shared remains in a space of respect and confidentiality.</p>
+        </div>
+        <div class="faq-card">
+            <strong><span class="es">¿Puedo reprogramar?</span><span class="en">Can I reschedule?</span></strong>
+            <p class="es">Sí. Con al menos 24 horas de anticipación.</p>
+            <p class="en">Yes. With at least 24 hours notice.</p>
+        </div>
+        <div class="faq-card">
+            <strong><span class="es">¿Las sesiones sustituyen atención médica o psicológica?</span><span class="en">Do sessions replace medical or psychological care?</span></strong>
+            <p class="es">No. Las sesiones tienen un propósito de crecimiento personal y no sustituyen servicios profesionales de salud.</p>
+            <p class="en">No. The sessions are for personal growth purposes and do not replace professional healthcare services.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Políticas -->
+<section>
+    <h2 class="es">Políticas</h2>
+    <h2 class="en">Policies</h2>
+    <p class="es">Las sesiones se reservan una vez recibido el pago.</p>
+    <p class="en">Sessions are booked once payment is received.</p>
+    <p class="es">Las reprogramaciones con más de 24 horas de anticipación no tienen costo.</p>
+    <p class="en">Rescheduling with more than 24 hours in advance is free of charge.</p>
+    <p class="es">Las cancelaciones con menos de 24 horas no son reembolsables.</p>
+    <p class="en">Cancellations with less than 24 hours notice are non-refundable.</p>
+    <p class="es">Los programas iniciados no son reembolsables.</p>
+    <p class="en">Programs once started are non-refundable.</p>
+</section>
+
+<!-- Sección WhatsApp -->
+<section id="contacto" class="whatsapp">
+    <h2 class="es">Reserva Tu Sesión</h2>
+    <h2 class="en">Book Your Session</h2>
+    <p class="es" style="text-align: center;">Si este camino resuena contigo, será un honor acompañarte.</p>
+    <p class="en" style="text-align: center;">If this path resonates with you, it will be an honor to accompany you.</p>
+    <br>
+    <a class="btn" href="https://wa.me/5213312674594" target="_blank">
+        <span class="es">Escribir por WhatsApp</span>
+        <span class="en">Contact via WhatsApp</span>
+    </a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <h3>Princess of Olives</h3>
+    <p class="es">Conciencia • Transformación • Servicio</p>
+    <p class="en">Consciousness • Transformation • Service</p>
+    <br>
+    <p style="cursor: pointer; color: var(--gold);" onclick="toggleLanguage()">Español | English</p>
+    <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2026 Princess of Olives. <span class="es">Todos los derechos reservados.</span><span class="en">All rights reserved.</span></p>
+</footer>
+
+<!-- Script para cambiar de idioma -->
+<script>
+function toggleLanguage() {
+    const body = document.body;
+    if (body.classList.contains('lang-es')) {
+        body.classList.remove('lang-es');
+        body.classList.add('lang-en');
+        document.documentElement.lang = 'en';
+    } else {
+        body.classList.remove('lang-en');
+        body.classList.add('lang-es');
+        document.documentElement.lang = 'es';
+    }
+}
